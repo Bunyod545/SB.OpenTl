@@ -33,7 +33,7 @@
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteContactsAsync(IReadOnlyList<IInputUser> users, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IUpdates> DeleteContactsAsync(IReadOnlyList<IInputUser> users, CancellationToken cancellationToken = default(CancellationToken))
         {
             ClientSettings.EnsureUserAuthorized();
 

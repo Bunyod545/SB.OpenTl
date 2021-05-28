@@ -13,14 +13,6 @@
     <RepositoryUrl>https://github.com/bunyod545/OpenTl</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Auth\Client\**" />
-    <Compile Remove="Auth\Server\**" />
-    <EmbeddedResource Remove="Auth\Client\**" />
-    <EmbeddedResource Remove="Auth\Server\**" />
-    <None Remove="Auth\Client\**" />
-    <None Remove="Auth\Server\**" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="BarsGroup.CodeGuard" Version="3.2.43" />
     <PackageReference Include="Castle.Windsor" Version="4.1.1" />
     <PackageReference Include="DotNetty.Buffers" Version="0.6.0" />

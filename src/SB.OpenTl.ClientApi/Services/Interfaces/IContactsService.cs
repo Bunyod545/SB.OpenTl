@@ -20,7 +20,7 @@
         /// <param name="users">Users for delete</param>
         /// <param name="cancellationToken">A cancellation token</param>
         /// <returns>Success</returns>
-        Task<bool> DeleteContactsAsync(IReadOnlyList<IInputUser> users, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IUpdates> DeleteContactsAsync(IReadOnlyList<IInputUser> users, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>Returns the current user’s contact list</summary>
         /// <param name="cancellationToken">Cancellation token</param>

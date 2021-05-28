@@ -124,7 +124,6 @@
             var request = new RequestSignUp
                           {
                               PhoneNumber = phoneNumber,
-                              PhoneCode = code,
                               PhoneCodeHash = sentCode.PhoneCodeHash,
                               FirstName = firstName,
                               LastName = lastName
