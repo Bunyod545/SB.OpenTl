@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard16;net46</TargetFrameworks>
     <Title>OpenTl commmon library</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <PackageId>SB.OpenTl.Common</PackageId>
     <Authors>Viktor Borisov, Salimov Bunyod</Authors>
     <Company />
