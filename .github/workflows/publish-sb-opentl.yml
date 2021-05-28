@@ -25,19 +25,19 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
       - uses: actions/checkout@v2
-      - name: publish SB.OpenTl.ClientApi on version change
-        id: publish_nuget_SB_OpentTl_ClientApi
-        uses: rohith/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: src/SB.OpenTl.ClientApi/SB.OpenTl.ClientApi.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-      
-      - uses: actions/checkout@v2
       - name: publish SB.OpenTl.ClientApi.MtProto on version change
         id: publish_nuget_SB_OpentTl_ClientApi_MtProto
         uses: rohith/publish-nuget@v2
         with:
           PROJECT_FILE_PATH: src/SB.OpenTl.ClientApi.MtProto/SB.OpenTl.ClientApi.MtProto.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.ClientApi on version change
+        id: publish_nuget_SB_OpentTl_ClientApi
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/SB.OpenTl.ClientApi/SB.OpenTl.ClientApi.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
       
       - uses: up9cloud/action-notify@master
