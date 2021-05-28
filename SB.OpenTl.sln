@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.Schema.Tests", "t
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{32958D64-202A-407C-A51F-3E7C433829C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.ClientApi", "src\SB.OpenTl.ClientApi.ClientApi\SB.OpenTl.ClientApi.csproj", "{539CB683-F590-4442-9E87-985F34F7DB7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.ClientApi", "src\SB.OpenTl.ClientApi\SB.OpenTl.ClientApi.csproj", "{539CB683-F590-4442-9E87-985F34F7DB7B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.ClientApi.MtProto", "src\SB.OpenTl.ClientApi.MtProto\SB.OpenTl.ClientApi.MtProto.csproj", "{6078FA44-39C1-4C9A-B9FC-3900C354C891}"
 EndProject
