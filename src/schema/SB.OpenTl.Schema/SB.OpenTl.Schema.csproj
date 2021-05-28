@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard16;net46</TargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Title>Schema for a OpenTl project</Title>
+		<Version>121</Version>
+		<PackageId>SB.OpenTl.Schema</PackageId>
+		<Authors>Viktor Borisov, Salimov Bunyod</Authors>
+		<Company />
+		<Product>OpenTl messenger</Product>
+		<Description>This is a schema for a OpenTl project</Description>
+		<PackageTags>OpenTl api schema telegram</PackageTags>
+		<PackageProjectUrl>https://github.com/bunyod545</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/bunyod545/SB.OpenTl</RepositoryUrl>
+		<RootNamespace>OpenTl.Schema</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="DotNetty.Buffers" Version="0.5.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+		<PackageReference Include="Newtonsoft.Json">
+			<Version>11.0.2</Version>
+		</PackageReference>
+		<PackageReference Include="System.Dynamic.Runtime">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Reflection">
+			<Version>4.3.0</Version>
+		</PackageReference>
+	</ItemGroup>
+</Project>

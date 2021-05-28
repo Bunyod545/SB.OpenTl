@@ -1,0 +1,49 @@
+name: publish SB.OpenTl projects to nuget
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.Common on version change
+        id: publish_nuget_SB_OpentTl_Common
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/SB.OpenTl.Common/SB.OpenTl.Common.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.Schema on version change
+        id: publish_nuget_SB_OpentTl_Schema
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/schema/SB.OpenTl.Schema/SB.OpenTl.Schema.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.Schema on version change
+        id: publish_nuget_SB_OpentTl_Schema
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/SB.OpenTl.ClientApi/SB.OpenTl.ClientApi.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.Schema on version change
+        id: publish_nuget_SB_OpentTl_Schema
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/SB.OpenTl.ClientApi.MtProto/SB.OpenTl.ClientApi.MtProto.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      
+      - uses: up9cloud/action-notify@master
+        name: Notify Telegram
+        if: always()
+        env:
+          GITHUB_JOB_STATUS: ${{ job.status }}
+          TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_TOKEN}}
+          TELEGRAM_CHAT_ID: ${{secrets.TELEGRAM_USER}}

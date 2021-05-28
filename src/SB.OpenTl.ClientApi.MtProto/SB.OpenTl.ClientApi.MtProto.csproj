@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard16;net46</TargetFrameworks>
+    <Title>Client implementation of the MtProto protocol</Title>
+    <Version>1</Version>
+    <PackageId>SB.OpenTl.ClientApi.MtProto</PackageId>
+    <Authors>Viktor Borisov, Salimov Bunyod</Authors>
+    <Company />
+    <Product>OpenTl project</Product>
+    <Description>Client implementation of the MtProto protocol to connect the client to a server, such as Telegram Messenger</Description>
+    <PackageTags>opentl telegram mtproto</PackageTags>
+    <PackageProjectUrl>https://github.com/bunyod545</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bunyod545/SB.OpenTl</RepositoryUrl>
+    <RootNamespace>OpenTl.ClientApi.MtProto</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BarsGroup.CodeGuard" Version="3.2.43" />
+    <PackageReference Include="DotNetty.Handlers" Version="0.6.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="NullGuard.Fody" Version="1.8.5" />
+    <PackageReference Include="OpenTl.Common" Version="1.1.27" />
+    <PackageReference Include="OpenTl.Netty.Socks" Version="1.0.2" />
+  </ItemGroup>
+</Project>

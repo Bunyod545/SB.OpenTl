@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard16;net46</TargetFrameworks>
+    <Title>OpenTl commmon library</Title>
+    <Version>1.0.0</Version>
+    <PackageId>SB.OpenTl.Common</PackageId>
+    <Authors>Viktor Borisov, Salimov Bunyod</Authors>
+    <Company />
+    <Product>OpenTl project</Product>
+    <Description>Common modules for OpenTl project</Description>
+    <PackageTags>opentl</PackageTags>
+    <PackageProjectUrl>https://github.com/bunyod545</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bunyod545/OpenTl</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Auth\Client\**" />
+    <Compile Remove="Auth\Server\**" />
+    <EmbeddedResource Remove="Auth\Client\**" />
+    <EmbeddedResource Remove="Auth\Server\**" />
+    <None Remove="Auth\Client\**" />
+    <None Remove="Auth\Server\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BarsGroup.CodeGuard" Version="3.2.43" />
+    <PackageReference Include="Castle.Windsor" Version="4.1.1" />
+    <PackageReference Include="DotNetty.Buffers" Version="0.6.0" />
+    <PackageReference Include="OpenTl.BouncyCastle" Version="1.8.3" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\schema\SB.OpenTl.Schema\SB.OpenTl.Schema.csproj" />
+  </ItemGroup>
+</Project>
