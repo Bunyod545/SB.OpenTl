@@ -4,7 +4,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<Title>Schema for a OpenTl project</Title>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<PackageId>SB.OpenTl.Schema</PackageId>
 		<Authors>Viktor Borisov, Salimov Bunyod</Authors>
 		<Company />
