@@ -32,38 +32,38 @@
         public ISessionWriter SessionWriter { get; set; }
 
         public ILogoutService LogoutService { get; set; }
-        
+
         /// <inheritdoc />
         public int? CurrentUserId => ClientSettings.ClientSession.UserId;
 
-//        /// <inheritdoc />
-//        public async Task<TUser> CheckCloudPasswordAsync(string password, CancellationToken cancellationToken = default(CancellationToken))
-//        {
-//            Guard.That(password, nameof(password)).IsNotNullOrWhiteSpace();
-//
-//            var passwordBytes = Encoding.UTF8.GetBytes(password);
-//
-//            var pwd = (TPassword)await RequestSender.SendRequestAsync(new RequestGetPassword(), cancellationToken).ConfigureAwait(false);
-//            var rv = pwd.CurrentSalt.Concat(passwordBytes).Concat(pwd.CurrentSalt);
-//
-//            byte[] passwordHash;
-//            using (var sha = SHA256.Create())
-//            {
-//                passwordHash = sha.ComputeHash(rv.ToArray());
-//            }
-//
-//            var request = new RequestCheckPassword
-//                          {
-//                              PasswordHash = passwordHash
-//                          };
-//            var result = (TAuthorization)await RequestSender.SendRequestAsync(request, cancellationToken).ConfigureAwait(false);
-//
-//            var user = result.User.Is<TUser>();
-//
-//            await OnUserAuthenticated(user).ConfigureAwait(false);
-//
-//            return user;
-//        }
+        //        /// <inheritdoc />
+        //        public async Task<TUser> CheckCloudPasswordAsync(string password, CancellationToken cancellationToken = default(CancellationToken))
+        //        {
+        //            Guard.That(password, nameof(password)).IsNotNullOrWhiteSpace();
+        //
+        //            var passwordBytes = Encoding.UTF8.GetBytes(password);
+        //
+        //            var pwd = (TPassword)await RequestSender.SendRequestAsync(new RequestGetPassword(), cancellationToken).ConfigureAwait(false);
+        //            var rv = pwd.CurrentSalt.Concat(passwordBytes).Concat(pwd.CurrentSalt);
+        //
+        //            byte[] passwordHash;
+        //            using (var sha = SHA256.Create())
+        //            {
+        //                passwordHash = sha.ComputeHash(rv.ToArray());
+        //            }
+        //
+        //            var request = new RequestCheckPassword
+        //                          {
+        //                              PasswordHash = passwordHash
+        //                          };
+        //            var result = (TAuthorization)await RequestSender.SendRequestAsync(request, cancellationToken).ConfigureAwait(false);
+        //
+        //            var user = result.User.Is<TUser>();
+        //
+        //            await OnUserAuthenticated(user).ConfigureAwait(false);
+        //
+        //            return user;
+        //        }
 
         /// <inheritdoc />
         public async Task<ISentCode> SendCodeAsync(string phoneNumber, CancellationToken cancellationToken = default(CancellationToken))
@@ -71,11 +71,12 @@
             Guard.That(phoneNumber, nameof(phoneNumber)).IsNotNullOrWhiteSpace();
 
             var request = new RequestSendCode
-                          {
-                              PhoneNumber = phoneNumber,
-                              ApiId = ClientSettings.AppId,
-                              ApiHash = ClientSettings.AppHash,
-                          };
+            {
+                PhoneNumber = phoneNumber,
+                ApiId = ClientSettings.AppId,
+                ApiHash = ClientSettings.AppHash,
+                Settings = new TCodeSettings()
+            };
 
             return await RequestSender.SendRequestAsync(request, cancellationToken).ConfigureAwait(false);
         }
@@ -93,11 +94,11 @@
             Guard.That(code, nameof(code)).IsNotNullOrWhiteSpace();
 
             var request = new RequestSignIn
-                          {
-                              PhoneNumber = phoneNumber,
-                              PhoneCodeHash = sentCode.PhoneCodeHash,
-                              PhoneCode = code
-                          };
+            {
+                PhoneNumber = phoneNumber,
+                PhoneCodeHash = sentCode.PhoneCodeHash,
+                PhoneCode = code
+            };
 
             var result = (TAuthorization)await RequestSender.SendRequestAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -122,12 +123,12 @@
             Guard.That(lastName, nameof(lastName)).IsNotNullOrWhiteSpace();
 
             var request = new RequestSignUp
-                          {
-                              PhoneNumber = phoneNumber,
-                              PhoneCodeHash = sentCode.PhoneCodeHash,
-                              FirstName = firstName,
-                              LastName = lastName
-                          };
+            {
+                PhoneNumber = phoneNumber,
+                PhoneCodeHash = sentCode.PhoneCodeHash,
+                FirstName = firstName,
+                LastName = lastName
+            };
             var result = (TAuthorization)await RequestSender.SendRequestAsync(request, cancellationToken).ConfigureAwait(false);
 
             var user = result.User.Is<TUser>();
@@ -135,7 +136,7 @@
             await OnUserAuthenticated(user).ConfigureAwait(false);
             return user;
         }
-        
+
 
         private async Task OnUserAuthenticated(TUser user)
         {

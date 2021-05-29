@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.ClientApi.MtProto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SB.OpenTl.Common", "src\SB.OpenTl.Common\SB.OpenTl.Common.csproj", "{D048902E-C9DF-4E21-8DC0-0E0C64D9D98B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SB.OpenTl.ClientApi.Samples", "src\samples\SB.OpenTl.ClientApi.Samples\SB.OpenTl.ClientApi.Samples.csproj", "{D0313A84-1E8D-4749-8E0B-9824C582EF5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{D048902E-C9DF-4E21-8DC0-0E0C64D9D98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D048902E-C9DF-4E21-8DC0-0E0C64D9D98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D048902E-C9DF-4E21-8DC0-0E0C64D9D98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0313A84-1E8D-4749-8E0B-9824C582EF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0313A84-1E8D-4749-8E0B-9824C582EF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0313A84-1E8D-4749-8E0B-9824C582EF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0313A84-1E8D-4749-8E0B-9824C582EF5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{539CB683-F590-4442-9E87-985F34F7DB7B} = {37BC12A7-AFCA-4390-99E9-1FEA194302BF}
 		{6078FA44-39C1-4C9A-B9FC-3900C354C891} = {37BC12A7-AFCA-4390-99E9-1FEA194302BF}
 		{D048902E-C9DF-4E21-8DC0-0E0C64D9D98B} = {37BC12A7-AFCA-4390-99E9-1FEA194302BF}
+		{D0313A84-1E8D-4749-8E0B-9824C582EF5A} = {32958D64-202A-407C-A51F-3E7C433829C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0D85B4D-2783-4900-A542-2785B76A7CB3}
