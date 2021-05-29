@@ -9,14 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: publish SB.OpenTl.Common on version change
-        id: publish_nuget_SB_OpentTl_Common
-        uses: rohith/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: src/SB.OpenTl.Common/SB.OpenTl.Common.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-          
-      - uses: actions/checkout@v2
       - name: publish SB.OpenTl.Schema on version change
         id: publish_nuget_SB_OpentTl_Schema
         uses: rohith/publish-nuget@v2
@@ -24,6 +16,14 @@ jobs:
           PROJECT_FILE_PATH: src/schema/SB.OpenTl.Schema/SB.OpenTl.Schema.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
+      - uses: actions/checkout@v2
+      - name: publish SB.OpenTl.Common on version change
+        id: publish_nuget_SB_OpentTl_Common
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/SB.OpenTl.Common/SB.OpenTl.Common.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          
       - uses: actions/checkout@v2
       - name: publish SB.OpenTl.ClientApi.MtProto on version change
         id: publish_nuget_SB_OpentTl_ClientApi_MtProto
